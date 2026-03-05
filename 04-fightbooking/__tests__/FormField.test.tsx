@@ -1,5 +1,4 @@
 /**
- * @jest-environment jsdom
  * ทดสอบ FormField component
  */
 
@@ -46,4 +45,3 @@ describe("FormField", () => {
     expect(input.maxLength).toBe(6);
   });
 });
-

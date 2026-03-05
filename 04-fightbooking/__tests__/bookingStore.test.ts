@@ -1,5 +1,4 @@
 /**
- * @jest-environment jsdom
  * ทดสอบ bookingStore reducer ทุก action
  */
 

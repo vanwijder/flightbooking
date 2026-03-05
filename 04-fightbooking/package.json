@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "jest --watchAll=false",
-    "test:watch": "jest --watch"
+    "test": "npx jest --config jest.config.js --watchAll=false",
+    "test:watch": "npx jest --config jest.config.js --watch"
   },
   "dependencies": {
     "next": "16.1.6",

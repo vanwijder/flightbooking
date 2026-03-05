@@ -1,5 +1,4 @@
 /**
- * @jest-environment jsdom
  * ทดสอบ PassengerCard component
  */
 
@@ -51,4 +50,3 @@ describe("PassengerCard", () => {
     expect(screen.getByText("SJ")).toBeInTheDocument();
   });
 });
-

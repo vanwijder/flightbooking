@@ -1,5 +1,4 @@
 /**
- * @jest-environment jsdom
  * ทดสอบ StepIndicator component
  */
 
@@ -39,4 +38,3 @@ describe("StepIndicator", () => {
     expect(screen.getByText("Boarding Pass")).toBeInTheDocument();
   });
 });
-

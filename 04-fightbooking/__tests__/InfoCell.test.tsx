@@ -1,5 +1,4 @@
 /**
- * @jest-environment jsdom
  * ทดสอบ InfoCell component
  */
 
@@ -37,4 +36,3 @@ describe("InfoCell", () => {
     expect(valueEl?.textContent).toBe("C14");
   });
 });
-

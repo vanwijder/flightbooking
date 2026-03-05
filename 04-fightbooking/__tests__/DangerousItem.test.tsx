@@ -1,5 +1,4 @@
 /**
- * @jest-environment jsdom
  * ทดสอบ DangerousItem component
  */
 
@@ -30,4 +29,3 @@ describe("DangerousItem", () => {
     }).not.toThrow();
   });
 });
-
