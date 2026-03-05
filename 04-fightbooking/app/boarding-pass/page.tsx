@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useBooking } from "@/store/bookingStore";
 import StepIndicator from "@/components/StepIndicator";
+import InfoCell from "@/components/InfoCell";
 
 export default function BoardingPassPage() {
   const router = useRouter();
@@ -16,7 +17,6 @@ export default function BoardingPassPage() {
     router.push("/");
   }
 
-  // ถ้ายังไม่ได้เช็คอิน ให้ redirect กลับ
   if (selectedPax.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-24 px-4 text-center">
@@ -113,7 +113,7 @@ export default function BoardingPassPage() {
                       <div
                         key={i}
                         style={{ height: i % 5 === 0 ? 40 : 28 }}
-                        className={`w-1 rounded-sm ${Math.random() > 0.4 ? "bg-gray-800" : "bg-white border border-gray-200"}`}
+                        className={`w-1 rounded-sm ${i % 3 === 0 ? "bg-gray-800" : "bg-gray-200"}`}
                       />
                     ))}
                   </div>
@@ -144,18 +144,6 @@ export default function BoardingPassPage() {
       >
         ← เริ่มการเช็คอินใหม่
       </button>
-    </div>
-  );
-}
-
-function InfoCell({ label, value, sub, highlight }: {
-  label: string; value: string; sub: string; highlight?: boolean;
-}) {
-  return (
-    <div className="flex flex-col">
-      <p className="text-xs text-gray-400 uppercase tracking-wider">{label}</p>
-      <p className={`text-lg font-bold ${highlight ? "text-blue-600" : "text-gray-800"}`}>{value}</p>
-      <p className="text-xs text-gray-500">{sub}</p>
     </div>
   );
 }

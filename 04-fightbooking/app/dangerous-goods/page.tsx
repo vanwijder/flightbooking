@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useBooking } from "@/store/bookingStore";
 import StepIndicator from "@/components/StepIndicator";
+import DangerousItem from "@/components/DangerousItem";
 
 const DANGEROUS_ITEMS = [
   { icon: "🔋", label: "แบตเตอรี่ลิเธียม (Lithium Batteries)" },
@@ -13,6 +14,7 @@ const DANGEROUS_ITEMS = [
   { icon: "🧪", label: "สารกัดกร่อน (Corrosive Substances)" },
   { icon: "🔫", label: "อาวุธ / มีด (Weapons / Sharp Objects)" },
 ];
+
 
 export default function DangerousGoodsPage() {
   const router = useRouter();
@@ -51,13 +53,7 @@ export default function DangerousGoodsPage() {
         {/* Dangerous Items List */}
         <div className="grid grid-cols-2 gap-2 mb-6">
           {DANGEROUS_ITEMS.map((item) => (
-            <div
-              key={item.label}
-              className="flex items-center gap-2 bg-red-50 border border-red-100 rounded-lg px-3 py-2"
-            >
-              <span className="text-xl">{item.icon}</span>
-              <span className="text-xs text-gray-700">{item.label}</span>
-            </div>
+            <DangerousItem key={item.label} icon={item.icon} label={item.label} />
           ))}
         </div>
 

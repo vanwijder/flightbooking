@@ -18,6 +18,24 @@ export interface PassengerInfo {
   mealPreference: string;
 }
 
+export interface FlightInfo {
+  from: string;
+  fromName: string;
+  to: string;
+  toName: string;
+  flightNo: string;
+  date: string;
+  boardingTime: string;
+  gate: string;
+}
+
+export interface ApiBookingResponse {
+  bookingRef: string;
+  lastName: string;
+  passengers: Passenger[];
+  flight: FlightInfo;
+}
+
 export interface BookingState {
   bookingInfo: BookingInfo;
   passengers: Passenger[];
@@ -34,4 +52,3 @@ export interface BookingState {
   setHasDangerousGoods: (value: boolean) => void;
   reset: () => void;
 }
-

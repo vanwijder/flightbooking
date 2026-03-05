@@ -30,6 +30,7 @@ const initialState: State = {
 // ---------- Actions ----------
 type Action =
   | { type: "SET_BOOKING_INFO"; payload: BookingInfo }
+  | { type: "SET_BOOKING_AND_PASSENGERS"; payload: { bookingInfo: BookingInfo; passengers: Passenger[] } }
   | { type: "TOGGLE_SELECT_PASSENGER"; payload: string }
   | { type: "SELECT_ALL_PASSENGERS" }
   | { type: "CLEAR_ALL_PASSENGERS" }
@@ -41,6 +42,16 @@ function reducer(state: State, action: Action): State {
   switch (action.type) {
     case "SET_BOOKING_INFO":
       return { ...state, bookingInfo: action.payload };
+
+    case "SET_BOOKING_AND_PASSENGERS":
+      return {
+        ...state,
+        bookingInfo: action.payload.bookingInfo,
+        passengers: action.payload.passengers,
+        selectedPassengerIds: [],
+        passengerInfoMap: {},
+        hasDangerousGoods: null,
+      };
 
     case "TOGGLE_SELECT_PASSENGER": {
       const exists = state.selectedPassengerIds.includes(action.payload);
