@@ -13,8 +13,10 @@ describe("DangerousItem", () => {
   });
 
   it("แสดง icon ถูกต้อง", () => {
-    render(<DangerousItem icon="🔥" label="วัตถุไวไฟ" />);
-    expect(screen.getByText("🔥")).toBeInTheDocument();
+    const { container } = render(<DangerousItem icon="🔥" label="วัตถุไวไฟ" />);
+    const iconSpan = container.querySelector('[aria-hidden="true"]');
+    expect(iconSpan).toBeInTheDocument();
+    expect(iconSpan?.textContent).toBe("🔥");
   });
 
   it("icon span มี aria-hidden=true", () => {

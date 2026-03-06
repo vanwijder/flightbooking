@@ -2,4 +2,4 @@
 peer = false
 
 [test]
-preload = ["happy-dom"]
+preload = ["./happydom.ts", "./jest.setup.ts"]
